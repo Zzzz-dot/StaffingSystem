@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Staffing System - StaffList</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="css/table/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="css/table/responsive.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="css/table/adminlte.min.css">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <link href="css/profile.css" rel="stylesheet">
+  <link href="css/login.css" rel="stylesheet">
+
+  <style type="text/css">
+    .table th {
+      text-align: center;
+      /** 设置水平方向居中 */
+      vertical-align: middle
+        /** 设置垂直方向居中 */
+    }
+  </style>
+
+  <!-- JQuery -->
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <!-- =======================================================
+  * Template Name: FlexStart - v1.2.0
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+  <div id="RegisterBox" class="MyBox" style="display: none;height: 80%;overflow:auto;z-index: 10;">
+    <div class="login-top"
+      style="text-align: center;padding-top: 5%;font-size: 24px;font-weight:600;color: #333333;height: 15%;">
+      注册界面
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">姓名</strong></div>
+      <div class="login-center-input">
+        <input type="text" maxlength="10" id="name" value="" placeholder="请输入用户姓名" onfocus="this.placeholder=''"
+          onblur="this.placeholder='请输入用户姓名'" />
+      </div>
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">性别</strong></div>
+      <div class="login-center-input">
+        <div class="form-group" style="top:50%;transform:translateY(-50%);position:absolute;">
+          <select class="form-control" id="sex">
+            <option>男</option>
+            <option>女</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center; width: 16%;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">身份证</strong></div>
+      <div class="login-center-input">
+        <input type="text" maxlength="18" id="idcard" value="" placeholder="请输入用户身份证号" onfocus="this.placeholder=''"
+          onblur="this.placeholder='请输入用户身份证号'" />
+      </div>
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">电话</strong></div>
+      <div class="login-center-input">
+        <input type="text" maxlength="15" id="phone" value="" placeholder="请输入用户电话号" onfocus="this.placeholder=''"
+          onblur="this.placeholder='请输入用户电话号'" />
+      </div>
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">部门</strong></div>
+      <div class="login-center-input">
+        <input type="text" maxlength="15" id="department" value="" placeholder="请输入用户所在部门" onfocus="this.placeholder=''"
+          onblur="this.placeholder='请输入用户所在部门'" />
+      </div>
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">职位</strong></div>
+      <div class="login-center-input">
+        <input type="text" maxlength="15" id="title" value="" placeholder="请输入用户职位" onfocus="this.placeholder=''"
+          onblur="this.placeholder='请输入用户职位'" />
+      </div>
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">帐号</strong></div>
+      <div class="login-center-input">
+        <input type="text" maxlength="15" id="account" value="" placeholder="请输入用户帐号" onfocus="this.placeholder=''"
+          onblur="this.placeholder='请输入用户帐号'" />
+      </div>
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">密码</strong></div>
+      <div class="login-center-input">
+        <input type="password" maxlength="15" id="password" value="" placeholder="请输入用户密码" onfocus="this.placeholder=''"
+          onblur="this.placeholder='请输入用户密码'" />
+      </div>
+    </div>
+    <div class="login-center" style="height: 10%;">
+      <div class="login-center-img" style="text-align:center; width: 16%;"><strong
+          style="top:50%;transform:translateY(-50%);position:absolute;">管理者</strong></div>
+      <div class="login-center-input">
+        <div class="form-group" style="top:50%;transform:translateY(-50%);position:absolute;">
+          <select class="form-control" id="privilege">
+            <option>是</option>
+            <option>否</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="login-bottom" id="register" style="height: 15%;">
+      <div class="login-button">
+        <p style="position: absolute; top:50%;left: 50%;transform: translate(-50%,-50%);">注册</p>
+      </div>
+    </div>
+    <div class="login-bottom" id="close" style="height: 15%;">
+      <div class="login-button">
+        <p style="position: absolute; top:50%;left: 50%;transform: translate(-50%,-50%);">返回</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span>Staffing System</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="/homepage">主页</a></li>
+          <li><a class="nav-link scrollto active" href="#">员工</a></li>
+          <li><a class="nav-link scrollto" id="alltask">任务</a></li>
+          <li><a class="nav-link scrollto" href="/mymsg">消息</a></li>
+          <li class="dropdown"><a class="getstarted scrollto"><span>
+                <%- name %>
+              </span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/myinfo" target="_blank">个人信息</a></li>
+              <li><a href="/logout">登出</a></li>
+            </ul>
+          </li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <ol>
+          <li><a href="/homepage">主页</a></li>
+          <li>员工信息</li>
+        </ol>
+        <h2>员工信息</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="content" style="background: url(assets/img/hero-bg.png) top center no-repeat;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">员工信息列表</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table id="example" class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th>编号</th>
+                      <th>姓名</th>
+                      <th>性别</th>
+                      <th>电话</th>
+                      <th>部门</th>
+                      <th>头衔</th>
+                      <th>状态</th>
+                      <th>操作</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% for(var i=0; i<result.length; i++) { %>
+                      <tr>
+                        <th>
+                          <%= result[i].id %>
+                        </th>
+                        <th>
+                          <%= result[i].name %>
+                        </th>
+                        <th>
+                          <%= result[i].sex %>
+                        </th>
+                        <th>
+                          <%= result[i].phone %>
+                        </th>
+                        <th>
+                          <%= result[i].department %>
+                        </th>
+                        <th>
+                          <%= result[i].title %>
+                        </th>
+                        <th>
+                          <%= result[i].status %>
+                        </th>
+                        <th>
+                          <div class="dropdown">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                              操作
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" style="color:springgreen;" onclick="profile(this)">查看</a>
+                              <a class="dropdown-item" style="color:royalblue;" onclick="authorize(this)">授权</a>
+                              <a class="dropdown-item" style="color: darkgrey;" onclick="fire(this)">离职</a>
+                              <a class="dropdown-item" style="color: red;" onclick="deleted(this)">删除</a>
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                      <% } %>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <th>编号</th>
+                      <th>姓名</th>
+                      <th>性别</th>
+                      <th>电话</th>
+                      <th>部门</th>
+                      <th>头衔</th>
+                      <th>状态</th>
+                      <th>操作</th>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer">
+                <button class="btn mbtn"
+                  style="background-color: rgb(96, 233, 149);float: right;height:60px;width: 15%;min-width: 100px;"
+                  id="RegisterButton">创建账户</button>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="">
+              <span>Staffing System</span>
+            </a>
+            <p>这是一个简单的员工管理系统，主要包括员工信息管理、任务分配、任务进度管理、站内消息提示等功能</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bi bi-instagram bx bxl-instagram"></i></a>
+              <a href="#" class="linkedin"><i class="bi bi-linkedin bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-12 footer-links">
+            <h4>链接</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="/homepage">主页</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#">回到头部</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="#copyright">隐私政策</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-12 footer-contact text-md-start">
+            <h4>联系我们</h4>
+            <p>
+              电子科技大学<br>
+              成都，四川 611731<br>
+              中国<br><br>
+              <strong>电话:</strong> +86 1234 1234 123<br>
+              <strong>邮箱:</strong> example@example.com<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright" id="copyright">
+        &copy; Copyright <strong><span>Staffing System</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.bootstrap4.min.js"></script>
+  <script src="js/dataTables.responsive.js"></script>
+  <script src="js/dataTables.buttons.js"></script>
+  <script src="js/buttons.print.min.js"></script>
+  <script src="js/buttons.colVis.min.js"></script>
+
+  <script>
+    $(function () {
+      $("#example").DataTable({
+        "responsive": true, "lengthChange": false, "autoWidth": false,
+      })
+    });
+
+    $("#alltask").click(function () {
+      $.ajax({
+        type: 'GET',
+        url: '/alltask',
+        success: function (data) {
+          if (data.allow == false) {
+            alert('您无权查看任务信息！');
+          } else {
+            location = '/alltask';
+          }
+        },
+        error: function () {
+          alert('因其他原因登录失败！');
+        }
+      })
+    })
+
+    $("#RegisterButton").click(function () {
+      $("#RegisterBox").fadeIn("slow", function () {
+        $("a").css({ "pointer-events": "none" });
+        $("button").css({ "pointer-events": "none" });
+      });
+    })
+
+    $("#close").click(function () {
+      $("#RegisterBox").fadeOut("slow", function () {
+        $("a").css({ "pointer-events": "auto" });
+        $("button").css({ "pointer-events": "auto" });
+        $("#name").val("");
+        $("#sex").val("男");
+        $("#idcard").val("");
+        $("#phone").val("");
+        $("#department").val("");
+        $("#title").val("");
+        $("#account").val("");
+        $("#password").val("");
+        $("#privilege").val("是");
+      });
+    })
+
+    $("#register").click(function () {
+      var name = $("#name").val();
+      var sex = $("#sex").val();
+      var idcard = $("#idcard").val();
+      if (idcard.length != 15 && idcard.length != 18) {
+        alert("请输入正确的身份证号！");
+        return;
+      }
+      var phone = $("#phone").val();
+      if (phone.length < 11) {
+        alert("请输入正确的电话号码！");
+        return;
+      }
+      var department = $("#department").val();
+      var title = $("#title").val();
+      var account = $("#account").val();
+      var password = $("#password").val();
+      var privilege = $("#privilege").val();
+      if (privilege == "是") {
+        privilege = true;
+      } else {
+        privilege = false;
+      }
+      if (name == "" || department == "" || title == "" || account == "" || password == "") {
+        alert("字段不能为空！");
+        return;
+      }
+      var data = { name: name, sex: sex, identity_card: idcard, phone: phone, department: department, title: title, account: account, password: password, privilege: privilege };
+      //console.log(data);
+      $.ajax({
+        type: 'POST',
+        url: '/registerstaff',
+        data: data,
+        beforeSend: function () {
+          $("#register").css({ "pointer-events": "none" });
+          $("#close").css({ "pointer-events": "node" });
+        },
+        complete: function () {
+          $("#register").css({ "pointer-events": "auto" });
+          $("#close").css({ "pointer-events": "auto" });
+        },
+        success: function (data) {
+          if (data.state == "Inserted") {
+            alert('注册成功！');
+            location = "/allstaff"
+          } else if (data.state == "NoRoot") {
+            alert('您无权注册账户！');
+          } else if (data.state == "Existed") {
+            alert('对应账户、身份证或电话已存在！');
+          } else {
+            alert('注册失败！');
+          }
+        },
+        error: function () {
+          alert('因其他原因注册失败！');
+        }
+      })
+    })
+
+    function profile(me){
+      var self=$(me).parents("th");
+      var bros=$(self).siblings();
+      var id=$(bros[0]).text().trim();
+      var data={staffid:id};
+      console.log(data);
+      $.ajax({
+        type: 'GET',
+        url: '/profile',
+        data: data,
+        success:function(){
+          if (data.allow == false) {
+            alert('您无权查看员工具体信息！');
+          }else{
+            location='/profile?staffid='+id;
+          }
+        },
+        error: function () {
+          alert('因其他原因查看失败');
+        }
+      })
+    }
+
+    function authorize(me){
+      var self=$(me).parents("th");
+      var bros=$(self).siblings();
+      var id=$(bros[0]).text().trim();
+      var data={staffid:id};
+      $.ajax({
+        type: 'POST',
+        url: '/authorize',
+        data: data,
+        success:function(data){
+          if (data.allow == false) {
+            alert('您无权进行此操作！');
+          }else if (data.state=="Updated"){
+            alert('操作成功！');
+          }else{
+            alert('操作失败！');
+          }
+        },
+        error: function () {
+          alert('因其他原因操作失败');
+        }
+      })
+    }
+
+    function fire(me){
+      var self=$(me).parents("th");
+      var bros=$(self).siblings();
+      var id=$(bros[0]).text().trim();
+      var status=$(bros[6]).text().trim();
+      if(status=='离职'){
+        return;
+      }
+      var data={staffid:id};
+      $.ajax({
+        type: 'POST',
+        url: '/fire',
+        data: data,
+        success:function(data){
+          if (data.allow == false) {
+            alert('您无权进行此操作！');
+          }else if (data.state=="Updated"){
+            alert('操作成功！');
+            location='/allstaff';
+          }else{
+            alert('操作失败！');
+          }
+        },
+        error: function () {
+          alert('因其他原因操作失败');
+        }
+      })
+    }
+
+
+    function deleted(me){
+      var self=$(me).parents("th");
+      var bros=$(self).siblings();
+      var id=$(bros[0]).text().trim();
+      var data={id:id};
+      $.ajax({
+        type: 'POST',
+        url: '/deletestaff',
+        data: data,
+        success: function (data) {
+          if (data.state == "Deleted") {
+            alert('删除成功！');
+            location = "/allstaff";
+          } else if (data.state == "NoRoot") {
+            alert('您无权删除账户！');
+          } else if (data.state == "NoExisted") {
+            alert('对应账户不存在！');
+          } else {
+            alert('删除失败！');
+          }
+        },
+        error: function () {
+          alert('因其他原因删除失败');
+        }
+      })
+    }
+  </script>
+
+</body>
+
+</html>

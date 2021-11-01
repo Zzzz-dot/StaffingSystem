@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>访问越权</title>
+    <script type="text/javascript">
+    var t=5;
+    setInterval("jmp()",1000);
+
+    function jmp(){
+        if(t==0){
+            location="/"
+        }
+        document.getElementById("second").textContent=t;
+        t--;
+    }
+    </script>
+</head>
+<body style="background: url(assets/img/hero-bg.png) top center no-repeat;">
+    您无权访问该页面，将在
+    <span id="second">5</span>
+    秒后跳转。
+    <br>
+    或
+    <a href="/homepage">点击此处</a>
+    立即跳转。
+</body>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>会话过期</title>
+    <script type="text/javascript">
+    var t=5;
+    setInterval("jmp()",1000);
+
+    function jmp(){
+        if(t==0){
+            location="/"
+        }
+        document.getElementById("second").textContent=t;
+        t--;
+    }
+    </script>
+</head>
+<body>
+    您的会话已经过期或者未登录，将在
+    <span id="second">5</span>
+    秒后跳转。
+    <br>
+    或
+    <a href="/">点击此处</a>
+    立即跳转。
+</body>

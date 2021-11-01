@@ -1,0 +1,32 @@
+CREATE TABLE IF NOT EXISTS `task`(
+`id` INT UNSIGNED AUTO_INCREMENT,
+`creater` INT UNSIGNED NOT NULL,
+`name` VARCHAR(25) NOT NULL,
+`description` VARCHAR(500) NOT NULL,
+`status` ENUM('进行中','已完成','未完成') NOT NULL,
+`score` TINYINT UNSIGNED,
+`start` DATETIME NOT NULL, 
+`end` DATETIME,
+`deadline` DATETIME NOT NULL,
+PRIMARY KEY(`id`),
+FOREIGN KEY(`creater`) REFERENCES staff(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `taskstatus`(
+`id` INT UNSIGNED AUTO_INCREMENT,
+`stage` TINYINT UNSIGNED NOT NULL,
+`description` VARCHAR(250) NOT NULL,
+`status` ENUM('未开始','进行中','已完成') NOT NULL,
+`finish` DATETIME,
+`taskid` INT UNSIGNED NOT NULL,
+PRIMARY KEY(`id`),
+UNIQUE(taskid,stage),
+FOREIGN KEY(`taskid`) REFERENCES task(id) ON DELETE CASCADE
+);
+CREATE TABLE IF NOT EXISTS `staff2task`(
+`staffid` INT UNSIGNED,
+`taskid` INT UNSIGNED,
+PRIMARY KEY(`staffid`,`taskid`),
+FOREIGN KEY(`staffid`) REFERENCES staff(id) ON DELETE CASCADE,
+FOREIGN KEY(`taskid`) REFERENCES task(id) ON DELETE CASCADE
+);

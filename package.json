@@ -1,0 +1,24 @@
+{
+  "name": "staffing_system",
+  "version": "1.0.0",
+  "description": "Staff Manage System",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "staff",
+    "manage",
+    "web"
+  ],
+  "author": "zzz",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "moment": "^2.29.1",
+    "mysql": "^2.18.1",
+    "node-cron": "^3.0.0"
+  }
+}

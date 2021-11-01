@@ -1,0 +1,4 @@
+.mbtn{background-color: rgb(200, 222, 245);border-radius: 3px;box-shadow: 0px 0px 10px #39334e;opacity:95%;color: rgb(105, 103, 103);font-weight: 600;}
+
+.minput{color: #333333;width: 60%;height: 100%;border:0 ;border-bottom: 1.5px solid #cccccc;outline: none;border-radius: 2px;opacity: 95%}
+.minput:focus{border: 1.5px solid dodgerblue;}
